@@ -1,0 +1,37 @@
+{
+  "rules": {
+    "locations": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        "current": {
+          ".write": "auth != null && auth.uid === $uid",
+          ".validate": "newData.hasChildren(['latitude', 'longitude', 'positionAt', 'updatedAt'])",
+          "latitude": {
+            ".validate": "newData.isNumber() && newData.val() >= -90 && newData.val() <= 90"
+          },
+          "longitude": {
+            ".validate": "newData.isNumber() && newData.val() >= -180 && newData.val() <= 180"
+          },
+          "accuracy": {
+            ".validate": "!newData.exists() || newData.isNumber() && newData.val() >= 0"
+          },
+          "heading": {
+            ".validate": "!newData.exists() || newData.isNumber() && newData.val() >= 0 && newData.val() <= 360"
+          },
+          "speed": {
+            ".validate": "!newData.exists() || newData.isNumber() && newData.val() >= 0"
+          },
+          "positionAt": {
+            ".validate": "newData.isNumber() && newData.val() <= now"
+          },
+          "updatedAt": {
+            ".validate": "newData.isNumber()"
+          },
+          "$other": {
+            ".validate": false
+          }
+        }
+      }
+    }
+  }
+}

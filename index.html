@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1424" />
+    <meta name="description" content="Panel seguro de seguimiento de ubicación en tiempo real." />
+    <title>Pulse · Ubicación en vivo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root">
+      <main style="min-height:100vh;display:grid;place-items:center;padding:24px;background:#0b1424;color:#eff4fc;font-family:Arial,sans-serif">
+        <section style="max-width:480px;padding:32px;border:1px solid #26364e;border-radius:14px;background:#111d30;line-height:1.6">
+          <p style="color:#71f0bd;font-size:12px;font-weight:bold;letter-spacing:1px">PULSE · UBICACIÓN EN VIVO</p>
+          <h1 style="font-size:24px">La aplicación necesita configuración</h1>
+          <p>Esta página no funciona con Live Server: utiliza React y debe iniciarse con Vite.</p>
+          <p>Abre una terminal en la carpeta del proyecto y ejecuta:</p>
+          <pre style="padding:14px;border-radius:8px;background:#0b1424;color:#71f0bd;white-space:pre-wrap">npm install
+npm run dev</pre>
+          <p>Completa la configuración pública de Firebase en el archivo <code>.env</code>, siguiendo los pasos del <code>README.md</code>. El mapa OpenStreetMap no necesita clave.</p>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
